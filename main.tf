@@ -11,7 +11,7 @@ terraform {
     region = "eu-central-1"
   }
 
-  resource "aws_security_group" {
+  resource "aws_security_group" "web_app" {
     name        = "web_app"
     description = "security group"
 
