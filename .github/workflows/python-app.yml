@@ -71,3 +71,7 @@ jobs:
         AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: terraform apply -input=false -auto-approve
+    - name: Build app image
+      run: |
+        docker build -t myimage .
+        docker run --rm -d -p 8080:8080 myimage
