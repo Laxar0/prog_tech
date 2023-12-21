@@ -58,7 +58,6 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.ANS_SECRET_ACCESS_KEY }}
       id: init
       run: terraform init
-      working-directory: terraform
 
     - name: Terraform Plan
       env:
@@ -66,11 +65,9 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       id: plan
       run: terraform plan -no-color -input=false -refresh=true
-      working-directory: terraform
 
     - name: Terraform Apply
       env:
         AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: terraform apply -input=false -auto-approve
-      working-directory: terraform
