@@ -8,7 +8,7 @@ terraform {
   }
 }
   provider "aws" {
-    region = "us-central-1"
+    region = "eu-central-1"
   }
 
   resource "aws_security_group" "web_app" {
