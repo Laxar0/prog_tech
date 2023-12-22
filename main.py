@@ -1,3 +1,7 @@
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
 def support_my_format(s):
     if s[0].isdigit() and s[1]==':' and int (s[0])==len (s)-2:
         return True
@@ -10,3 +14,10 @@ def transform_into_my_format(classical_s):
 
 def concat(s1, s2):
     return str(int (s1[0])+int (s2[0]))+':'+s1[2:]+s2[2:]
+
+@app.route('/', methods=['GET'])
+def test():
+    if support_my_format('2:is') == True:
+        return "Supportive"
+if __name__ == "__main__":
+    app.run(debug=True, host='0.0.0.0', port=3000)
