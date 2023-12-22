@@ -41,14 +41,14 @@ resource "aws_lightsail_container_service_deployment_version" "flask_app_deploym
     
     ports = {
       # Consistent with the port exposed by the Dockerfile and app.py
-      8080 = "HTTP"
+      3000 = "HTTP"
     }
   }
 
   public_endpoint {
     container_name = "flask-application"
     # Consistent with the port exposed by the Dockerfile and app.py
-    container_port = 8080
+    container_port = 3000
 
     health_check {
       healthy_threshold   = 2
