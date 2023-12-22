@@ -37,9 +37,7 @@ jobs:
     - name: Test with pytest
       run: |
         python -m unittest test_os.py
-    - name: Build app image
-       run:|
-        docker build -t myimage .
+    
    
     - name: Setup AWS ECR Details
       uses: aws-actions/configure-aws-credentials@v1
