@@ -1,5 +1,7 @@
 FROM python:3
 WORKDIR /
+COPY . .
 EXPOSE 8080
 
-RUN python main.py
+CMD ["python3","main.py"]
+
